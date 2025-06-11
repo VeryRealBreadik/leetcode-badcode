@@ -27,6 +27,7 @@ class Solution(object):
 def main():
     solution = Solution()
     
+    # TODO: Make a proper function to easily create linked list from a regular list
     l1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
     l2 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
     result = solution.addTwoNumbers(l1, l2)

@@ -1,5 +1,8 @@
+from typing import List
+
+
 class Solution(object):
-    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         merged_list = sorted(nums1 + nums2)
         merged_list_len = len(merged_list)
         if len(merged_list) % 2 == 0:
@@ -16,8 +19,8 @@ def main():
     nums22 = [3, 4]
     result1 = solution.findMedianSortedArrays(nums11, nums12)
     result2 = solution.findMedianSortedArrays(nums21, nums22)
-    print(result1)
-    print(result2)
+    print(f"{nums11, nums12}: {result1}")
+    print(f"{nums21, nums22}: {result2}")
 
 
 if __name__ == "__main__":

@@ -31,8 +31,8 @@ def main():
     s2 = "a"
     result1 = solution.longestPalindrome(s1)
     result2 = solution.longestPalindrome(s2)
-    print(result1)
-    print(result2)
+    print(f"{s1}: {result1}")
+    print(f"{s2}: {result2}")
 
 
 if __name__ == "__main__":
