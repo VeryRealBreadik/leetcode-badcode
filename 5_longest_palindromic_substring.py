@@ -1,25 +1,34 @@
 class Solution(object):
-    def longestPalindrome(self, s: str) -> str: # Fix this
-        """
-        :type s: str
-        :rtype: str
-        """
-        left_pointer = 0
-        max_len = 1
-        for right_pointer in range(1, len(s)):
-            if right_pointer <= left_pointer:
-                continue
-            for i in range(left_pointer, right_pointer + 1):
-                if s[i] != s[right_pointer - left_pointer]:
-                    left_pointer += 1
-                    break
-            max_len = max(max_len, right_pointer - left_pointer + 1)
-        return max_len
+    def longestPalindrome(self, s: str) -> str:
+        longest_substring = s[0]
+        for substring_center in range(len(s) - 1):
+            left_pointer = substring_center - 1
+            right_pointer = substring_center + 1
+            longest_odd_substring = self.check_for_palindrome(s, left_pointer, right_pointer)
+            
+            left_pointer = substring_center
+            right_pointer = substring_center + 1
+            longest_even_substring = self.check_for_palindrome(s, left_pointer, right_pointer)
+            
+            if len(longest_substring) < len(longest_odd_substring):
+                longest_substring = longest_odd_substring
+            if len(longest_substring) < len(longest_even_substring):
+                longest_substring = longest_even_substring
+        return longest_substring
+    
+    def check_for_palindrome(self, s: str, left_pointer: int, right_pointer: int) -> str: 
+        while left_pointer >= 0 and right_pointer <= len(s) - 1:
+            if s[left_pointer] != s[right_pointer]:
+                break
+            left_pointer -= 1
+            right_pointer += 1
+        
+        return s[left_pointer + 1:right_pointer]
 
 def main():
     solution = Solution()
-    s1 = "babad"
-    s2 = "cbbd"
+    s1 = "babaasdwqqwoejqwejqjjjiiijjjd"
+    s2 = "a"
     result1 = solution.longestPalindrome(s1)
     result2 = solution.longestPalindrome(s2)
     print(result1)

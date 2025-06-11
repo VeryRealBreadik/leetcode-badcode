@@ -6,11 +6,6 @@ class ListNode(object):
 
 class Solution(object):
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        """
-        :type l1: Optional[ListNode]
-        :type l2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
         dummy_head = ListNode()
         current_node = dummy_head
         carry = 0

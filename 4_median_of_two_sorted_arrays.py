@@ -1,10 +1,5 @@
 class Solution(object):
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: float
-        """
         merged_list = sorted(nums1 + nums2)
         merged_list_len = len(merged_list)
         if len(merged_list) % 2 == 0:
