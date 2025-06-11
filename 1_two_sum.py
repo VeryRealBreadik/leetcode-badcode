@@ -1,5 +1,5 @@
 class Solution(object):
-    def twoSum(self, nums, target):
+    def twoSum(self, nums: list[int], target: int) -> tuple:
         """
         :type nums: List[int]
         :type target: int
